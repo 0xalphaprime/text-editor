@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 import re
+import webbrowser
 
 headline_color = "#FFA07A"  # headline color
 bold_color = "#4287f5"  # bold text color
@@ -82,6 +83,9 @@ def apply_markdown_formatting(text_widget):
         code_start, code_end = match.span(1)  # Adjusted to get only the text within triple backticks, after the first newline
         text_widget.tag_add("block_code", f"1.0+{code_start}c", f"1.0+{code_end}c")
         text_widget.tag_config("block_code", font=("Courier", 12), background=inline_code_color)
+
+    
+   
 
 
 def main():
